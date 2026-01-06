@@ -1,0 +1,20 @@
+  <ion-card class="card-estilo">
+  <ion-card-header>
+    <ion-card-title>Opciones disponibles </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+   <ion-list>
+    <ion-item>
+      <ion-toggle 
+      [checked]="true" 
+      [(ngModel)]="habilitarBorrado" 
+      (ionChange)="ionChange($event)"
+      aria-label="Permitir eliminar citas en el inicio"
+
+      >Permitir eliminar citas en el inicio</ion-toggle><br /><br />
+    </ion-item>
+   </ion-list>
+  </ion-card-content>
+</ion-card>
+ 

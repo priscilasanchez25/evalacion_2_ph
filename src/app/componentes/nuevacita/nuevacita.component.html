@@ -1,0 +1,50 @@
+<ion-card class="card-estilo">
+  <ion-card-header>
+    <ion-card-title>Crear una nueva cita </ion-card-title>
+  </ion-card-header>
+
+
+  <ion-card-content>
+
+    <ion-item> 
+      <ion-input [(ngModel)]="cita.frase"
+            required="required" 
+             type="text" 
+             minlength="5"
+              #fraseInput="ngModel"
+             placeholder="Escribe la frase aquí">
+      </ion-input> 
+     <ion-item>
+    
+  </ion-item>
+  <ion-item>
+    <ion-text 
+      [hidden]="fraseInput.valid || fraseInput.pristine"
+      color="danger"
+    >Escriba una frase de 5 o más letras!</ion-text>
+  </ion-item>
+
+    </ion-item>
+    <!-- Campo para el autor -->
+    <ion-item>
+       
+      <ion-input [(ngModel)]="cita.autor"      
+        required="required" 
+             type="text" 
+             minlength="2"
+              #autorInput="ngModel"
+             placeholder="Escribe el autor aquí">
+      </ion-input> </ion-item>
+      <ion-item>
+    <ion-text 
+      [hidden]="autorInput.valid || autorInput.pristine"
+      color="danger"
+    >Escriba un autor de 2 o más letras!</ion-text>
+  </ion-item>
+      
+      <!-- Botón para guardar -->
+    <ion-button expand="block"  [disabled]="!fraseInput.valid" 
+ color="primary" (click)="onCrearCita();fraseInput.control.markAsPristine();fraseInput.control.markAsUntouched()" aria-label="Botón para agregar cita"> Guardar Cita </ion-button>
+
+  </ion-card-content>
+</ion-card>

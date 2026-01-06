@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Gestión de citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Gestión de citas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+   <app-nuevacita (onCitaCreada)="actualizarLista($event)"></app-nuevacita>
+ <app-coleccioncitas [listaCitas]="listaCitas" ></app-coleccioncitas>
+ </ion-content>
+
